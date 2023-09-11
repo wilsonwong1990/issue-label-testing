@@ -27,3 +27,7 @@ jobs:
       - name: act on bug issues
         if: contains(github.event.label.name, 'bug')
         run: echo ${{ github.event.label.name }}
+      - name: Print GitHub event action
+        run: |
+            echo "GitHub event action: ${{ github.event.action }}"
+            echo "TRIGGER_EVENT=${{ inputs.triggerEvent }}" >> $GITHUB_ENV
